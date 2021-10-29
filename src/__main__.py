@@ -25,6 +25,11 @@ async def john(ctx, test: int = 0):
     else: response = choice(txt)
     await ctx.send(response)
 
+@bot.command(help='Explain why you\'re better than your opponent')
+async def outplayed(ctx, char: str = None):
+    character = char.capitalize()
+    if character not in roster: character = choice(roster)
+    await ctx.send(f"In a game like smash, {character} has to work 10x harder than your average smash character because of his kit. He may seem unfair when fighting him but believe me when I say you're definitely being outplayed especially at high/top level. He's 100% honest as crazy as that sounds.")
 
 bot.run(token)
 
