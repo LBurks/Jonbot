@@ -25,6 +25,9 @@ async def john(ctx, test: int = 0):
     else: response = choice(txt)
     await ctx.send(response)
 
+@bot.command(help='Lists legal stages')
+async def stagelist(ctx):
+    await ctx.send("""Starters: PS2, FD, Battlefield, TnC, Smashville\nCounters: Kalos, Small Battlefield\n7 minute timers, 2 bans, Players cannot pick last won stage, and counterpicked stage. (mDSR)""")
 
 bot.run(token)
 
